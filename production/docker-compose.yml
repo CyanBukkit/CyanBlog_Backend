@@ -1,0 +1,14 @@
+version: '3'
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    environment:
+      - JAVA_OPTS=-Xms128m -Xmx256m
+
+networks:
+  app-network:
+    driver: bridge
